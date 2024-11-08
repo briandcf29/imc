@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Índice de Massa Corporal</title>
+</head>
+
+<body id="corpo">
+
+    <header>
+        <h1>Calculadora de IMC</h1>
+        <nav>
+            <ul>
+                <li><a href="#oque é">Oque é o imc</a></li>
+                <li><a href="#utilidade">Utilidade</a></li>
+                <li><button onclick="mudarCor()" >Mudar de cor</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <h2>Oque é o imc</h2>
+        <p>Criado no século 19 pelo matemático Lambert Quételet, o Índice de Massa Corporal, conhecido pela sigla IMC, é um cálculo simples que permite medir se alguém está ou não com o peso ideal.</p>
+    </div>
+
+    <div>
+        <h2>Utilidade</h2>
+        <p>Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.</p>
+    </div>
+
+    <label for="altura">Altura:</label>
+    <input type="number" name="Altura" id="altura">
+
+    <label for="peso">Peso</label>
+    <input type="peso" name="peso" id="peso">
+
+    <button onclick="calcImc()"> Calcular IMC </button>
+
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+    <!-- <footer>
+        <p>&copy; 2024 Calculadora de IMC.Todos os direitos reservados.</p>
+    </footer> -->
+
+    <script>
+        function calcImc() {
+            const altura = document.getElementById("altura").value;
+            const peso = document.getElementById("peso").value;
+            const resultado = peso / (altura ** 2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2);
+        
+        }
+
+        function mudarCor(){
+            const corpo = document.getElementById("corpo");
+
+            corpo.style.backgroundColor = corpo.style.backgroundColor === "aliceblue" ? "blue" : "aliceblue";
+        }
+    </script>
+
+
+    <footer>
+        <p>&copy; 2024 Calculadora de IMC.Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
